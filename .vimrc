@@ -8,12 +8,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/AutoClose--Alves'
 call plug#end()
+:set rnu
 :set nu
-function! NumberToggle()
-  if(&relativenumber == 1)
-   set number
-  else
-    set relativenumber
-  endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+autocmd InsertEnter * :set nu
+autocmd InsertLeave * :set rnu
